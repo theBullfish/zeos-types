@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeviceProfile",
+  "description": "Hardware device profile — canonical type aligned with MDE core models",
+  "type": "object",
+  "properties": {
+    "device_id": { "type": "string" },
+    "name": { "type": "string" },
+    "device_type": { "type": "string", "enum": ["cpu", "gpu", "tpu", "fpga", "accelerator", "dpu", "npu"] },
+    "vendor": { "type": "string" },
+    "memory_bytes": { "type": "integer", "minimum": 0 },
+    "compute_tflops": { "type": ["number", "null"] },
+    "bandwidth_gbps": { "type": ["number", "null"] },
+    "thermal_c": { "type": ["number", "null"] },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "metadata": { "type": "object" }
+  },
+  "required": ["device_id", "name", "device_type"]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal",
+  "description": "Zeos signal chain node data — maps to Z-OS struct sig_data + sig_node",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "chain_id": { "type": "string" },
+    "node_id": { "type": "string" },
+    "data": { "type": "string", "contentEncoding": "base64" },
+    "size": { "type": "integer", "minimum": 0 },
+    "type_tag": { "type": "integer", "minimum": 0 },
+    "state": { "type": "string", "enum": ["idle", "ready", "running", "done", "error"] },
+    "tsc_start": { "type": "integer", "minimum": 0 },
+    "tsc_end": { "type": "integer", "minimum": 0 },
+    "edges": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["id", "chain_id", "node_id", "size", "type_tag", "state"]
+}

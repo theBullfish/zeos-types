@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Telemetry",
+  "description": "Hardware telemetry reading from any service/device",
+  "type": "object",
+  "properties": {
+    "source_service": { "type": "string" },
+    "source_device": { "type": "string" },
+    "timestamp": { "type": "number" },
+    "readings": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    }
+  },
+  "required": ["source_service", "source_device", "timestamp", "readings"]
+}

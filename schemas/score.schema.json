@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Score",
+  "description": "TRISA scoring result — 32-lane IS/ISNT decision per chunk",
+  "type": "object",
+  "properties": {
+    "chunk_id": { "type": "integer", "minimum": 0 },
+    "lanes": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 0, "maximum": 255 },
+      "minItems": 32,
+      "maxItems": 32
+    },
+    "max_score": { "type": "integer", "minimum": 0, "maximum": 255 },
+    "mean_score": { "type": "number" },
+    "decision": { "type": "string", "enum": ["IS", "ISNT"] },
+    "source_bytes": { "type": "integer", "minimum": 0 },
+    "timestamp": { "type": "number" }
+  },
+  "required": ["chunk_id", "lanes", "max_score", "mean_score", "decision"]
+}

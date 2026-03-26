@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Identity",
+  "description": "ZAuth identity — universal across all Zeos services",
+  "type": "object",
+  "properties": {
+    "user_id": { "type": "string", "format": "uuid" },
+    "email": { "type": "string", "format": "email" },
+    "name": { "type": "string" },
+    "role": { "type": "string" },
+    "session_token": { "type": "string" },
+    "service_tokens": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "required": ["user_id", "email", "name", "role"]
+}

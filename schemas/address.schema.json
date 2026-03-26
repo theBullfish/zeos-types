@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Address",
+  "description": "CFA fractal address — variable-width segmented path into the address space",
+  "type": "object",
+  "properties": {
+    "segments": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 0 }
+    },
+    "topology_config": { "type": "string", "enum": ["sovereign", "internal", "reference"] },
+    "path_string": { "type": "string" }
+  },
+  "required": ["segments", "topology_config"]
+}

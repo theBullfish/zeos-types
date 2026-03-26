@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VaultEntry",
+  "description": "VAULT entry — bridges Z-OS vault_inode and CFA-lib VaultEntry",
+  "type": "object",
+  "properties": {
+    "path": { "type": "string" },
+    "tier": { "type": "string", "enum": ["sovereign", "internal", "reference"] },
+    "entry_type": { "type": "string", "enum": ["file", "directory", "signal", "link"] },
+    "version": { "type": "integer", "minimum": 0 },
+    "data_id": { "type": "string" },
+    "size": { "type": "integer", "minimum": 0 },
+    "timestamp": { "type": "integer", "minimum": 0 },
+    "prev_version": { "type": ["integer", "null"] }
+  },
+  "required": ["path", "tier", "entry_type", "version"]
+}
