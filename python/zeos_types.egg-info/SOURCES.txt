@@ -17,3 +17,7 @@ python/zeos_types.egg-info/SOURCES.txt
 python/zeos_types.egg-info/dependency_links.txt
 python/zeos_types.egg-info/requires.txt
 python/zeos_types.egg-info/top_level.txt
+tests/test_cfa_client.py
+tests/test_models.py
+tests/test_schemas.py
+tests/test_spine_auth.py
