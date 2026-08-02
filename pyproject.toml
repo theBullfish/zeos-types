@@ -9,5 +9,11 @@ dependencies = [
     "redis>=5.0",
 ]
 
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+    "jsonschema>=4.0",
+]
+
 [tool.setuptools.packages.find]
 where = ["python"]
